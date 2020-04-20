@@ -1,5 +1,13 @@
-import React from 'react';
-import './App.css';
+import React, { useEffect } from 'react';
+import Character from './components/Character'
+
+import styled from 'styled-components'
+
+const WrapperBody = styled.section`
+  width: 100%;
+  
+`;
+
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -9,11 +17,24 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
-  return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
-    </div>
-  );
-}
+    // useEffect(() => {
+    //     axios
+    //     .get(`https://rickandmortyapi.com/api/character/1,2,3`)
+    //     .then(response => {
+    //         console.log(response.data)
+    //         (response.data)
+    //     })
 
-export default App;
+    // }, []);
+
+  return (
+      <WrapperBody>
+    <div className="App">
+      <h1 className="Header">Rick and Morty Characters</h1>
+      <Character> </Character>
+    </div>
+    </WrapperBody>
+  );
+
+}
+export default App
